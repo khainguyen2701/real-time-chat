@@ -1,0 +1,21 @@
+{
+  "bracketSpacing": false,
+  "printWidth": 90,
+  "singleQuote": false,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "endOfLine": "auto",
+  "importOrder": [
+    "^react\\w*|prop-types",
+    "<THIRD_PARTY_MODULES>",
+    "^src/(components/|views|layouts)|^@material-ui/(.*)$",
+    "^src/hooks/(.*)$",
+    "^src/actions/(.*)$",
+    "^[./]|^src/\\w+"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
