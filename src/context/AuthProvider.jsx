@@ -6,8 +6,8 @@ const AuthContext = createContext();
 export default function AuthProvider({children}) {
   const auth = getAuth();
   useEffect(() => {
-    const unsubscribed = auth.onIdTokenChanged((user) => {
-      console.log("user: ", user);
+    const unsubscribed = auth.onIdTokenChanged((item) => {
+      console.log("user: ", item);
     });
     return () => {
       unsubscribed();
