@@ -1,15 +1,17 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {createBrowserRouter, Outlet} from "react-router-dom";
 import AuthProvider from "../context/AuthProvider";
 
-const Home = React.lazy(() => import("../pages/home"));
 const Login = React.lazy(() => import("../pages/login"));
-
+const Home = React.lazy(() => import("../pages/chatRoom"));
 const AuthLayout = () => {
+  console.log("object1");
   return (
-    <AuthProvider>
-      <Outlet />
-    </AuthProvider>
+    <Suspense fallback={"Loading..."}>
+      <AuthProvider>
+        <Outlet />
+      </AuthProvider>
+    </Suspense>
   );
 };
 
@@ -19,12 +21,12 @@ export default createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
-        path: "/",
-        element: <Home />
-      },
-      {
         path: "/login",
         element: <Login />
+      },
+      {
+        path: "/",
+        element: <Home />
       }
     ]
   }
