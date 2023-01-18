@@ -31,11 +31,14 @@ const HeaderDescriptionStyled = styled.span`
 `;
 
 const ContentStyled = styled.div`
-  height: calc(100%-60px) !important;
+  height: -moz-calc(100% - (60px));
+  height: -webkit-calc(100% - (60px));
+  height: calc(100% - (60px));
   display: flex;
   flex-direction: column;
   padding: 11px;
   justify-content: flex-end;
+  text-align: left;
 `;
 const MessageListStyled = styled.div``;
 const Wrapper = styled.div`
@@ -74,6 +77,30 @@ function ChatWindow() {
       </HeaderStyled>
       <ContentStyled>
         <MessageListStyled>
+          <Message
+            text="Test"
+            photo={sourceAvt}
+            displayName="Test"
+            createAt="04-04-2000"
+          />
+          <Message
+            text="Test"
+            photo={sourceAvt}
+            displayName="Test"
+            createAt="04-04-2000"
+          />
+          <Message
+            text="Test"
+            photo={sourceAvt}
+            displayName="Test"
+            createAt="04-04-2000"
+          />
+          <Message
+            text="Test"
+            photo={sourceAvt}
+            displayName="Test"
+            createAt="04-04-2000"
+          />
           <Message
             text="Test"
             photo={sourceAvt}
