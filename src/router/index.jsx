@@ -1,5 +1,6 @@
-import React, { Suspense } from "react";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import React, {Suspense} from "react";
+import {createBrowserRouter, Outlet} from "react-router-dom";
+import AppProvider from "../context/AppProvider";
 import AuthProvider from "../context/AuthProvider";
 
 const Login = React.lazy(() => import("../pages/login"));
@@ -8,7 +9,9 @@ const AuthLayout = () => {
   return (
     <Suspense fallback={"Loading..."}>
       <AuthProvider>
-        <Outlet />
+        <AppProvider>
+          <Outlet />
+        </AppProvider>
       </AuthProvider>
     </Suspense>
   );
