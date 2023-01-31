@@ -1,5 +1,5 @@
-import {UserAddOutlined} from "@ant-design/icons";
-import {Avatar, Button, Form, Input, Tooltip} from "antd";
+import { UserAddOutlined } from "@ant-design/icons";
+import { Avatar, Button, Form, Input, Tooltip } from "antd";
 import React from "react";
 import styled from "styled-components";
 import Message from "./Message";
@@ -40,9 +40,27 @@ const ContentStyled = styled.div`
   justify-content: flex-end;
   text-align: left;
 `;
-const MessageListStyled = styled.div``;
+const MessageListStyled = styled.div`
+  max-height:100%;
+  overflow-y: auto;
+`;
 const Wrapper = styled.div`
   height: 100vh;
+`;
+
+const FormStyled = styled(Form)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:2px;
+  border-radius: 2px;
+  border:1px solid rgb(230,230,230);
+`;
+
+const InputStyle = styled(Input)`
+  flex:1;
+  margin-bottom:0;
+  width:100%;
 `;
 
 function ChatWindow() {
@@ -114,12 +132,12 @@ function ChatWindow() {
             createAt="04-04-2000"
           />
         </MessageListStyled>
-        <Form>
-          <Form.Item>
-            <Input />
+        <FormStyled>
+          <Form.Item style={{ width: '100%' }}>
+            <InputStyle bordered={false} autoComplete="off" placeholder="Nhập tin nhắn..." />
           </Form.Item>
           <Button>Gửi</Button>
-        </Form>
+        </FormStyled>
       </ContentStyled>
     </Wrapper>
   );
